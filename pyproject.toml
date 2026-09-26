@@ -1,0 +1,26 @@
+[project]
+name = "stoch-epidemic"
+version = "0.2.0"
+description = "Stochastic epidemic models (CTMC SIR / measles) from mirkovicdev/stokmod."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = ["numpy>=1.24"]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.4", "ruff>=0.4"]
+
+[project.urls]
+Source = "https://github.com/MichaelSwann2x/stoch-epidemic"
+Original = "https://github.com/mirkovicdev/stokmod"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/stoch_epidemic"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
